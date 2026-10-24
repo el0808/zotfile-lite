@@ -1,0 +1,75 @@
+/* zotfile-lite preferences pane
+ *
+ * The pane is an XHTML fragment inserted into the preferences window, so the
+ * controls are plain HTML elements and need their own layout: Zotero's XUL
+ * checkbox/radio styling does not apply to them.
+ */
+
+#zotfile-prefpane .main-section {
+	min-width: 500px;
+	max-width: 720px;
+}
+
+#zotfile-prefpane .zotfile-row {
+	gap: 8px;
+	margin-block: 6px;
+	align-items: center;
+}
+
+#zotfile-prefpane .zotfile-preview {
+	margin-block: 8px;
+	padding: 6px 8px;
+	border-radius: 4px;
+	background: var(--fill-quinary, rgba(0, 0, 0, 0.06));
+	font-family: monospace;
+	word-break: break-all;
+}
+
+/* One option per line: control, label, optional inline value input */
+#zotfile-prefpane .zotfile-check,
+#zotfile-prefpane .zotfile-radio {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-block: 5px;
+	cursor: pointer;
+}
+
+#zotfile-prefpane .zotfile-radios {
+	display: flex;
+	flex-direction: column;
+	margin-block: 4px;
+}
+
+#zotfile-prefpane .zotfile-check input[type="checkbox"],
+#zotfile-prefpane .zotfile-radio input[type="radio"] {
+	margin: 0;
+	flex: none;
+}
+
+#zotfile-prefpane .zotfile-check span,
+#zotfile-prefpane .zotfile-radio span {
+	white-space: normal;
+}
+
+#zotfile-prefpane .zotfile-text {
+	flex: 1;
+	min-width: 260px;
+}
+
+#zotfile-prefpane .zotfile-short {
+	width: 180px;
+}
+
+#zotfile-prefpane .zotfile-medium {
+	width: 240px;
+}
+
+#zotfile-prefpane .zotfile-num {
+	width: 80px;
+	margin-inline-start: 4px;
+}
+
+#zotfile-prefpane groupbox {
+	margin-bottom: 14px;
+}

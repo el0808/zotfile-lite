@@ -1,0 +1,143 @@
+<vbox id="zotfile-prefpane" onload="Zotero.ZotFileLite.Preferences.init(this)">
+	<linkset>
+		<html:link rel="localization" href="zotfile-lite.ftl"/>
+	</linkset>
+
+	<html:div class="main-section">
+
+		<groupbox>
+			<label><html:h2 data-l10n-id="zotfile-pref-renaming"/></label>
+			<description data-l10n-id="zotfile-pref-renaming-desc"/>
+
+			<hbox align="center" class="zotfile-row">
+				<label data-l10n-id="zotfile-pref-format" control="zotfile-format"/>
+				<html:input id="zotfile-format" type="text" class="zotfile-text"
+					preference="extensions.zotfile.renameFormat"/>
+			</hbox>
+			<description id="zotfile-preview" class="zotfile-preview"/>
+
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.truncate_title"/>
+				<html:span data-l10n-id="zotfile-pref-truncate-title"/>
+				<html:input type="number" min="5" max="300" class="zotfile-num"
+					data-zotfile-int-pref="extensions.zotfile.max_titlelength"/>
+			</html:label>
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.truncate_smart"/>
+				<html:span data-l10n-id="zotfile-pref-truncate-smart"/>
+			</html:label>
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.truncate_authors"/>
+				<html:span data-l10n-id="zotfile-pref-truncate-authors"/>
+				<html:input type="number" min="1" max="50" class="zotfile-num"
+					data-zotfile-int-pref="extensions.zotfile.max_authors"/>
+			</html:label>
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.add_etal"/>
+				<html:span data-l10n-id="zotfile-pref-add-etal"/>
+			</html:label>
+
+			<separator class="thin"/>
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.removePeriods"/>
+				<html:span data-l10n-id="zotfile-pref-remove-periods"/>
+			</html:label>
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.replace_blanks"/>
+				<html:span data-l10n-id="zotfile-pref-replace-blanks"/>
+			</html:label>
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.lower_case"/>
+				<html:span data-l10n-id="zotfile-pref-lower-case"/>
+			</html:label>
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.removeDiacritics"/>
+				<html:span data-l10n-id="zotfile-pref-remove-diacritics"/>
+			</html:label>
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.useZoteroToRename"/>
+				<html:span data-l10n-id="zotfile-pref-use-zotero-rename"/>
+			</html:label>
+		</groupbox>
+
+		<groupbox>
+			<label><html:h2 data-l10n-id="zotfile-pref-location"/></label>
+
+			<hbox align="center" class="zotfile-row">
+				<label data-l10n-id="zotfile-pref-dest-dir" control="zotfile-dest-dir"/>
+				<html:input id="zotfile-dest-dir" type="text" class="zotfile-text"
+					preference="extensions.zotfile.dest_dir"/>
+				<html:button id="zotfile-choose-dest" data-l10n-id="zotfile-pref-choose-folder"/>
+			</hbox>
+
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.import"/>
+				<html:span data-l10n-id="zotfile-pref-import"/>
+			</html:label>
+
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.subfolder"/>
+				<html:span data-l10n-id="zotfile-pref-subfolder"/>
+				<html:input type="text" class="zotfile-short"
+					preference="extensions.zotfile.subfolderFormat"/>
+			</html:label>
+			<description data-l10n-id="zotfile-pref-subfolder-desc"/>
+		</groupbox>
+
+		<groupbox>
+			<label><html:h2 data-l10n-id="zotfile-pref-source"/></label>
+
+			<hbox align="center" class="zotfile-row">
+				<label data-l10n-id="zotfile-pref-source-dir" control="zotfile-source-dir"/>
+				<html:input id="zotfile-source-dir" type="text" class="zotfile-text"
+					preference="extensions.zotfile.source_dir"/>
+				<html:button id="zotfile-choose-source" data-l10n-id="zotfile-pref-choose-folder"/>
+			</hbox>
+			<description data-l10n-id="zotfile-pref-source-desc"/>
+
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.allFiles"/>
+				<html:span data-l10n-id="zotfile-pref-all-files"/>
+			</html:label>
+			<html:label class="zotfile-check">
+				<html:input type="checkbox" preference="extensions.zotfile.useFileTypes"/>
+				<html:span data-l10n-id="zotfile-pref-use-filetypes"/>
+				<html:input type="text" class="zotfile-medium"
+					preference="extensions.zotfile.filetypes"/>
+			</html:label>
+		</groupbox>
+
+		<groupbox>
+			<label><html:h2 data-l10n-id="zotfile-pref-autorename"/></label>
+			<html:div id="zotfile-autorename" class="zotfile-radios">
+				<html:label class="zotfile-radio">
+					<html:input type="radio" name="zotfile-autorename" value="1"/>
+					<html:span data-l10n-id="zotfile-pref-autorename-never"/>
+				</html:label>
+				<html:label class="zotfile-radio">
+					<html:input type="radio" name="zotfile-autorename" value="2"/>
+					<html:span data-l10n-id="zotfile-pref-autorename-ask"/>
+				</html:label>
+				<html:label class="zotfile-radio">
+					<html:input type="radio" name="zotfile-autorename" value="3"/>
+					<html:span data-l10n-id="zotfile-pref-autorename-ask-multi"/>
+				</html:label>
+				<html:label class="zotfile-radio">
+					<html:input type="radio" name="zotfile-autorename" value="4"/>
+					<html:span data-l10n-id="zotfile-pref-autorename-always"/>
+				</html:label>
+			</html:div>
+		</groupbox>
+
+		<groupbox>
+			<label><html:h2 data-l10n-id="zotfile-pref-messages"/></label>
+			<hbox align="center" class="zotfile-row">
+				<label data-l10n-id="zotfile-pref-notify-duration"
+					control="zotfile-notify-duration"/>
+				<html:input id="zotfile-notify-duration" type="number" min="500" max="60000" step="500"
+					class="zotfile-num"
+					data-zotfile-int-pref="extensions.zotfile.info_window_duration"/>
+			</hbox>
+		</groupbox>
+	</html:div>
+</vbox>
